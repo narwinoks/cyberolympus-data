@@ -1,0 +1,22 @@
+{
+    "sourceFile": "app/Http/Controllers/AgentController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1666683842091,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666685681238,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n \n class AgentController extends Controller\n {\n     public function index(){\n-        return view('customer.index');\n+        return view('agent.index');\n     }\n }\n"
+                }
+            ],
+            "date": 1666683842091,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Http\\Controllers;\n\nuse Illuminate\\Http\\Request;\n\nclass AgentController extends Controller\n{\n    public function index(){\n        return view('customer.index');\n    }\n}\n"
+        }
+    ]
+}

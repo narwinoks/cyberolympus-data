@@ -1,0 +1,38 @@
+{
+    "sourceFile": "app/Models/Customer.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1666680746867,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666680852594,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,6 +8,6 @@\n class Customer extends Model\n {\n     use HasFactory;\n     protected $guarded=['id'];\n-    protected $table='order_detail';\n+    protected $table='customer_id';\n }\n"
+                },
+                {
+                    "date": 1666681006790,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,5 +9,7 @@\n {\n     use HasFactory;\n     protected $guarded=['id'];\n     protected $table='customer_id';\n+\n+    public function \n }\n"
+                },
+                {
+                    "date": 1666681149640,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,6 +10,6 @@\n     use HasFactory;\n     protected $guarded=['id'];\n     protected $table='customer_id';\n \n-    public function \n+    public function Order()\n }\n"
+                },
+                {
+                    "date": 1666681157807,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,6 +10,8 @@\n     use HasFactory;\n     protected $guarded=['id'];\n     protected $table='customer_id';\n \n-    public function Order()\n+    public function Order(){\n+        return $this-\n+    }\n }\n"
+                },
+                {
+                    "date": 1666681163976,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,7 @@\n     protected $guarded=['id'];\n     protected $table='customer_id';\n \n     public function Order(){\n-        return $this->has\n+        return $this->hasm\n     }\n }\n"
+                }
+            ],
+            "date": 1666680746867,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Models;\n\nuse Illuminate\\Database\\Eloquent\\Factories\\HasFactory;\nuse Illuminate\\Database\\Eloquent\\Model;\n\nclass Customer extends Model\n{\n    use HasFactory;\n    protected $guarded=['id'];\n    protected $table='order_detail';\n}\n"
+        }
+    ]
+}

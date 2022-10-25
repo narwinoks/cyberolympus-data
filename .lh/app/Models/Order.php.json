@@ -1,0 +1,134 @@
+{
+    "sourceFile": "app/Models/Order.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 29,
+            "patches": [
+                {
+                    "date": 1666680942784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666680948873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,6 +8,6 @@\n class Order extends Model\n {\n     use HasFactory;\n     protected $guarded=['id'];\n-    protected $table='customer_id';\n+    protected $table='orders';\n }\n"
+                },
+                {
+                    "date": 1666680954335,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,5 +9,8 @@\n {\n     use HasFactory;\n     protected $guarded=['id'];\n     protected $table='orders';\n+\n+\n+    public function \n }\n"
+                },
+                {
+                    "date": 1666680960339,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,6 +11,6 @@\n     protected $guarded=['id'];\n     protected $table='orders';\n \n \n-    public function \n+    public function Customer\n }\n"
+                },
+                {
+                    "date": 1666680966079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,6 +11,8 @@\n     protected $guarded=['id'];\n     protected $table='orders';\n \n \n-    public function Customer\n+    public function Customer(){\n+        ret\n+    }\n }\n"
+                },
+                {
+                    "date": 1666680973590,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,7 +12,7 @@\n     protected $table='orders';\n \n \n     public function Customer(){\n-        ret\n+        return $this->belo\n     }\n }\n"
+                },
+                {
+                    "date": 1666680978762,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,7 +12,7 @@\n     protected $table='orders';\n \n \n     public function Customer(){\n-        return $this->belo\n+        return $this->hasMany()\n     }\n }\n"
+                },
+                {
+                    "date": 1666680984505,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,7 +12,7 @@\n     protected $table='orders';\n \n \n     public function Customer(){\n-        return $this->hasMany()\n+        return $this->hasMany(Order)\n     }\n }\n"
+                },
+                {
+                    "date": 1666680989595,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,7 +12,7 @@\n     protected $table='orders';\n \n \n     public function Customer(){\n-        return $this->hasMany(Order)\n+        return $this->hasMany(Order::cl)\n     }\n }\n"
+                },
+                {
+                    "date": 1666681180424,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,7 +12,7 @@\n     protected $table='orders';\n \n \n     public function Customer(){\n-        return $this->hasMany(Order::cl)\n+        return $this->hasMany(::class);\n     }\n }\n"
+                },
+                {
+                    "date": 1666681193732,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,7 +12,7 @@\n     protected $table='orders';\n \n \n     public function Customer(){\n-        return $this->hasMany(::class);\n+        return $this->hasMany(Customer::class,'');\n     }\n }\n"
+                },
+                {
+                    "date": 1666681203661,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,7 +12,7 @@\n     protected $table='orders';\n \n \n     public function Customer(){\n-        return $this->hasMany(Customer::class,'');\n+        return $this->hasMany(Customer::class,'customer');\n     }\n }\n"
+                },
+                {
+                    "date": 1666681631516,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,8 @@\n     protected $guarded=['id'];\n     protected $table='orders';\n \n \n-    public function Customer(){\n-        return $this->hasMany(Customer::class,'customer');\n+    public function User(){\n+        return $this->hasMany(Customer::class,'customer_id','id');\n     }\n }\n"
+                },
+                {
+                    "date": 1666681642934,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,7 +12,7 @@\n     protected $table='orders';\n \n \n     public function User(){\n-        return $this->hasMany(Customer::class,'customer_id','id');\n+        return $this->hasMany(User::class,'customer_id','id');\n     }\n }\n"
+                },
+                {
+                    "date": 1666681975880,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,7 +12,7 @@\n     protected $table='orders';\n \n \n     public function User(){\n-        return $this->hasMany(User::class,'customer_id','id');\n+        return $this->hasMany(User::class,);\n     }\n }\n"
+                },
+                {
+                    "date": 1666681982563,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,7 +12,7 @@\n     protected $table='orders';\n \n \n     public function User(){\n-        return $this->hasMany(User::class,);\n+        return $this->hasMany(User::class,'customer_id');\n     }\n }\n"
+                },
+                {
+                    "date": 1666681989772,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,7 +12,7 @@\n     protected $table='orders';\n \n \n     public function User(){\n-        return $this->hasMany(User::class,'customer_id');\n+        return $this->hasMany(User::class,);\n     }\n }\n"
+                },
+                {
+                    "date": 1666681999171,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,7 +12,7 @@\n     protected $table='orders';\n \n \n     public function User(){\n-        return $this->hasMany(User::class,);\n+        return $this->hasMany(User::class,'id','customer_id');\n     }\n }\n"
+                },
+                {
+                    "date": 1666684089126,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,5 +14,8 @@\n \n     public function User(){\n         return $this->hasMany(User::class,'id','customer_id');\n     }\n+    public function User(){\n+        return $this->hasMany(User::class,'id','customer_id');\n+    }\n }\n"
+                },
+                {
+                    "date": 1666684098349,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,8 @@\n \n     public function User(){\n         return $this->hasMany(User::class,'id','customer_id');\n     }\n-    public function User(){\n-        return $this->hasMany(User::class,'id','customer_id');\n+    public function Agent(){\n+        return $this->hasMany(User::class,'id','agent_id');\n     }\n }\n"
+                },
+                {
+                    "date": 1666684358642,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,5 @@\n \n     public function User(){\n         return $this->hasMany(User::class,'id','customer_id');\n     }\n-    public function Agent(){\n-        return $this->hasMany(User::class,'id','agent_id');\n-    }\n }\n"
+                },
+                {
+                    "date": 1666684366557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,5 +14,8 @@\n \n     public function User(){\n         return $this->hasMany(User::class,'id','customer_id');\n     }\n+    public function Agent(){\n+        return $this->hasMany(User::class,'id','agent_id');\n+    }\n }\n"
+                },
+                {
+                    "date": 1666684467296,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,7 +15,7 @@\n     public function User(){\n         return $this->hasMany(User::class,'id','customer_id');\n     }\n     public function Agent(){\n-        return $this->hasMany(User::class,'id','agent_id');\n+        return $this->hasMany(Agent::class,'id','agent_id');\n     }\n }\n"
+                },
+                {
+                    "date": 1666705219865,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,5 +17,7 @@\n     }\n     public function Agent(){\n         return $this->hasMany(Agent::class,'id','agent_id');\n     }\n+\n+    public function Order\n }\n"
+                },
+                {
+                    "date": 1666705225289,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,6 +18,6 @@\n     public function Agent(){\n         return $this->hasMany(Agent::class,'id','agent_id');\n     }\n \n-    public function Order\n+    public function OrderDetail()\n }\n"
+                },
+                {
+                    "date": 1666705230699,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,6 +18,8 @@\n     public function Agent(){\n         return $this->hasMany(Agent::class,'id','agent_id');\n     }\n \n-    public function OrderDetail()\n+    public function OrderDetail(){\n+        return $this\n+    }\n }\n"
+                },
+                {
+                    "date": 1666705238811,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,7 +19,7 @@\n         return $this->hasMany(Agent::class,'id','agent_id');\n     }\n \n     public function OrderDetail(){\n-        return $this\n+        return $this->hasMany(OrderDetail::class,\n     }\n }\n"
+                },
+                {
+                    "date": 1666705244014,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,7 +19,7 @@\n         return $this->hasMany(Agent::class,'id','agent_id');\n     }\n \n     public function OrderDetail(){\n-        return $this->hasMany(OrderDetail::class,\n+        return $this->hasMany(OrderDetail::class)\n     }\n }\n"
+                },
+                {
+                    "date": 1666705251408,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,7 +19,7 @@\n         return $this->hasMany(Agent::class,'id','agent_id');\n     }\n \n     public function OrderDetail(){\n-        return $this->hasMany(OrderDetail::class)\n+        return $this->hasMany(OrderDetail::class,'order')\n     }\n }\n"
+                },
+                {
+                    "date": 1666705258047,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,7 +19,7 @@\n         return $this->hasMany(Agent::class,'id','agent_id');\n     }\n \n     public function OrderDetail(){\n-        return $this->hasMany(OrderDetail::class,'order')\n+        return $this->hasMany(OrderDetail::class,'order_id','id')\n     }\n }\n"
+                }
+            ],
+            "date": 1666680942784,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Models;\n\nuse Illuminate\\Database\\Eloquent\\Factories\\HasFactory;\nuse Illuminate\\Database\\Eloquent\\Model;\n\nclass Order extends Model\n{\n    use HasFactory;\n    protected $guarded=['id'];\n    protected $table='customer_id';\n}\n"
+        }
+    ]
+}

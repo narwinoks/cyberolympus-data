@@ -1,0 +1,30 @@
+{
+    "sourceFile": "resources/views/templates/navbar.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1666672557730,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666678762365,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n \t\t\t\t\t\t\t\t\t<div class=\"figure mb-3\">\n \t\t\t\t\t\t\t\t\t\t<img src=\"https://via.placeholder.com/80x80\" alt=\"\">\n \t\t\t\t\t\t\t\t\t</div>\n \t\t\t\t\t\t\t\t\t<div class=\"info text-center\">\n-\t\t\t\t\t\t\t\t\t\t{{-- <p class=\"name font-weight-bold mb-0\">{{ auth()->user()->name }}</p> --}}\n+\t\t\t\t\t\t\t\t\t\t<p class=\"name font-weight-bold mb-0\">{{ auth()->user()->name }}</p>\n \t\t\t\t\t\t\t\t\t</div>\n \t\t\t\t\t\t\t\t</div>\n \t\t\t\t\t\t\t\t<div class=\"dropdown-body\">\n \t\t\t\t\t\t\t\t\t<ul class=\"profile-nav p-0 pt-3\">\n"
+                },
+                {
+                    "date": 1666678776739,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n \t\t\t\t\t\t\t\t\t<div class=\"figure mb-3\">\n \t\t\t\t\t\t\t\t\t\t<img src=\"https://via.placeholder.com/80x80\" alt=\"\">\n \t\t\t\t\t\t\t\t\t</div>\n \t\t\t\t\t\t\t\t\t<div class=\"info text-center\">\n-\t\t\t\t\t\t\t\t\t\t<p class=\"name font-weight-bold mb-0\">{{ auth()->user()->name }}</p>\n+\t\t\t\t\t\t\t\t\t\t{{-- <p class=\"name font-weight-bold mb-0\">{{ auth()->user()->name }}</p> --}}\n \t\t\t\t\t\t\t\t\t</div>\n \t\t\t\t\t\t\t\t</div>\n \t\t\t\t\t\t\t\t<div class=\"dropdown-body\">\n \t\t\t\t\t\t\t\t\t<ul class=\"profile-nav p-0 pt-3\">\n"
+                },
+                {
+                    "date": 1666678782407,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n \t\t\t\t\t\t\t\t</div>\n \t\t\t\t\t\t\t\t<div class=\"dropdown-body\">\n \t\t\t\t\t\t\t\t\t<ul class=\"profile-nav p-0 pt-3\">\n \t\t\t\t\t\t\t\t\t\t<li class=\"nav-item\">\n-\t\t\t\t\t\t\t\t\t\t\t<form action=\"{{ route('logout') }}\" method=\"POST\">\n+\t\t\t\t\t\t\t\t\t\t\t<form action=\"\" method=\"POST\">\n \t\t\t\t\t\t\t\t\t\t\t\t@csrf\n \t\t\t\t\t\t\t\t\t\t\t\t<button type=\"submit\" class=\"btn btn-success\"><i\n \t\t\t\t\t\t\t\t\t\t\t\t\tclass=\"logout\"></i>Logout</button>\n \t\t\t\t\t\t\t\t\t\t\t\t</form>\n"
+                }
+            ],
+            "date": 1666672557730,
+            "name": "Commit-0",
+            "content": "\n\n\t\t<div class=\"page-wrapper\">\n\t\t\t<!-- partial:partials/_navbar.html -->\n\t\t\t<nav class=\"navbar\">\n\t\t\t\t<a href=\"#\" class=\"sidebar-toggler\">\n\t\t\t\t\t<i data-feather=\"menu\"></i>\n\t\t\t\t</a>\n\t\t\t\t<div class=\"navbar-content\">\n\t\t\t\t\t\n\t\t\t\t\t<ul class=\"navbar-nav\">\n\t\t\t\t\t\t<li class=\"nav-item dropdown nav-profile\">\n\t\t\t\t\t\t\t<a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"profileDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n\t\t\t\t\t\t\t\t<img src=\"https://via.placeholder.com/30x30\" alt=\"profile\">\n\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t<div class=\"dropdown-menu\" aria-labelledby=\"profileDropdown\">\n\t\t\t\t\t\t\t\t<div class=\"dropdown-header d-flex flex-column align-items-center\">\n\t\t\t\t\t\t\t\t\t<div class=\"figure mb-3\">\n\t\t\t\t\t\t\t\t\t\t<img src=\"https://via.placeholder.com/80x80\" alt=\"\">\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<div class=\"info text-center\">\n\t\t\t\t\t\t\t\t\t\t{{-- <p class=\"name font-weight-bold mb-0\">{{ auth()->user()->name }}</p> --}}\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"dropdown-body\">\n\t\t\t\t\t\t\t\t\t<ul class=\"profile-nav p-0 pt-3\">\n\t\t\t\t\t\t\t\t\t\t<li class=\"nav-item\">\n\t\t\t\t\t\t\t\t\t\t\t<form action=\"{{ route('logout') }}\" method=\"POST\">\n\t\t\t\t\t\t\t\t\t\t\t\t@csrf\n\t\t\t\t\t\t\t\t\t\t\t\t<button type=\"submit\" class=\"btn btn-success\"><i\n\t\t\t\t\t\t\t\t\t\t\t\t\tclass=\"logout\"></i>Logout</button>\n\t\t\t\t\t\t\t\t\t\t\t\t</form>\n\t\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t</ul>\n\t\t\t\t</div>\n\t\t\t</nav>\n\t\t\t<!-- partial -->"
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "sourceFile": "resources/views/templates/main.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1666678988326,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666678994862,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,11 +8,8 @@\n             <li class=\"breadcrumb-item active\" aria-current=\"page\">Data Table</li>\n         </ol>\n     </nav>\n     <div class=\"row\">\n-        <div class=\"col-md-12 col-sm-11\">\n-            @include('templates.alert')\n-        </div>\n         @yield('content')\n         {{-- </div> --}}\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1666679014702,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n @include('templates.head')\n-@include('templates.sedibar')\n+@include('templates.seddibar')\n @include('templates.navbar')\n <div class=\"page-content\">\n     <nav class=\"page-breadcrumb\">\n         <ol class=\"breadcrumb\">\n"
+                },
+                {
+                    "date": 1666706543738,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n @include('templates.navbar')\n <div class=\"page-content\">\n     <nav class=\"page-breadcrumb\">\n         <ol class=\"breadcrumb\">\n-            <li class=\"breadcrumb-item\"><a href=\"#\">Tables</a></li>\n-            <li class=\"breadcrumb-item active\" aria-current=\"page\">Data Table</li>\n+            {{-- <li class=\"breadcrumb-item\"><a href=\"#\">Tables</a></li>\n+            <li class=\"breadcrumb-item active\" aria-current=\"page\">Data Table</li> --}}\n         </ol>\n     </nav>\n     <div class=\"row\">\n         @yield('content')\n"
+                }
+            ],
+            "date": 1666678988326,
+            "name": "Commit-0",
+            "content": "@include('templates.head')\n@include('templates.sedibar')\n@include('templates.navbar')\n<div class=\"page-content\">\n    <nav class=\"page-breadcrumb\">\n        <ol class=\"breadcrumb\">\n            <li class=\"breadcrumb-item\"><a href=\"#\">Tables</a></li>\n            <li class=\"breadcrumb-item active\" aria-current=\"page\">Data Table</li>\n        </ol>\n    </nav>\n    <div class=\"row\">\n        <div class=\"col-md-12 col-sm-11\">\n            @include('templates.alert')\n        </div>\n        @yield('content')\n        {{-- </div> --}}\n    </div>\n</div>\n@include('templates.footer')\n"
+        }
+    ]
+}

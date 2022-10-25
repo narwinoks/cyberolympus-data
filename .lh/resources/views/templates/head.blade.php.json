@@ -1,0 +1,18 @@
+{
+    "sourceFile": "resources/views/templates/head.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1666678971449,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1666678971449,
+            "name": "Commit-0",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\n    <title>Pengajuan Dinas</title>\n    <link rel=\"stylesheet\" href=\"{{ asset('assets/vendors/core/core.css') }}\">\n    <link rel=\"stylesheet\" href=\"{{ asset('assets/fonts/feather-font/css/iconfont.css') }}\">\n    <link rel=\"stylesheet\" href=\"{{ asset('assets/vendors/flag-icon-css/css/flag-icon.min.css') }}\">\n    <link rel=\"stylesheet\" href=\"{{ asset('assets/css/demo_1/style.css') }}\">\n    <link rel=\"shortcut icon\" href=\"{{ asset('assets/images/favicon.png') }}\" />\n    <meta name=\"csrf-token\" content=\"{{ csrf_token() }}\" />\n    @stack('styles')\n</head>\n\n<body>\n    <div class=\"main-wrapper\">\n"
+        }
+    ]
+}

@@ -1,0 +1,94 @@
+{
+    "sourceFile": "app/Http/Controllers/InvoiceController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 19,
+            "patches": [
+                {
+                    "date": 1666687681298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666687690083,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,6 +5,8 @@\n use Illuminate\\Http\\Request;\n \n class InvoiceController extends Controller\n {\n-    public function index\n+    public function index(){\n+        return view()\n+    }\n }\n"
+                },
+                {
+                    "date": 1666687697335,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n \n class InvoiceController extends Controller\n {\n     public function index(){\n-        return view()\n+        return view('invoice.index')\n     }\n }\n"
+                },
+                {
+                    "date": 1666687709826,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,14 @@\n <?php\n \n namespace App\\Http\\Controllers;\n \n+use App\\Models\\Order;\n use Illuminate\\Http\\Request;\n \n class InvoiceController extends Controller\n {\n     public function index(){\n-        return view('invoice.index')\n+        $orders=Order::all()\n+        return view('invoice.index');\n     }\n }\n"
+                },
+                {
+                    "date": 1666687715381,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,8 @@\n \n class InvoiceController extends Controller\n {\n     public function index(){\n-        $orders=Order::all()\n-        return view('invoice.index');\n+        $orders=Order::all();\n+        return view('invoice.index',co);\n     }\n }\n"
+                },
+                {
+                    "date": 1666705034533,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,9 @@\n class InvoiceController extends Controller\n {\n     public function index(){\n         $orders=Order::all();\n-        return view('invoice.index',co);\n+        return view('invoice.index',compact('orders'));\n     }\n+\n+    public function show\n }\n"
+                },
+                {
+                    "date": 1666705045244,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,6 +11,8 @@\n         $orders=Order::all();\n         return view('invoice.index',compact('orders'));\n     }\n \n-    public function show\n+    public function show(){\n+        return view('invoice.show\n+    }\n }\n"
+                },
+                {
+                    "date": 1666705073229,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,7 +12,8 @@\n         return view('invoice.index',compact('orders'));\n     }\n \n     public function show(){\n-        return view('invoice.show\n+        return view('invoice.show');\n     }\n }\n+/usr/share/code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1666705079266,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,8 @@\n         $orders=Order::all();\n         return view('invoice.index',compact('orders'));\n     }\n \n-    public function show(){\n+    public function show($id){\n         return view('invoice.show');\n     }\n }\n\\ No newline at end of file\n-/usr/share/code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html\n"
+                },
+                {
+                    "date": 1666705086613,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,7 +12,8 @@\n         return view('invoice.index',compact('orders'));\n     }\n \n     public function show($id){\n+        $invoice=Invoi\n         return view('invoice.show');\n     }\n\\ No newline at end of file\n-}\n+}\n"
+                },
+                {
+                    "date": 1666705093991,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,8 @@\n         return view('invoice.index',compact('orders'));\n     }\n \n     public function show($id){\n-        $invoice=Invoi\n+        $invoice=Order::find($id);\n         return view('invoice.show');\n     }\n\\ No newline at end of file\n-}\n+}\n"
+                },
+                {
+                    "date": 1666705099646,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,7 +13,8 @@\n     }\n \n     public function show($id){\n         $invoice=Order::find($id);\n+        dd($invoice)\n         return view('invoice.show');\n     }\n\\ No newline at end of file\n-}\n+}\n"
+                },
+                {
+                    "date": 1666705300687,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n         return view('invoice.index',compact('orders'));\n     }\n \n     public function show($id){\n-        $invoice=Order::find($id);\n-        dd($invoice)\n+        $invoice=Order::with() find($id);\n+        dd($invoice);\n         return view('invoice.show');\n\\ No newline at end of file\n     }\n-}\n+}\n"
+                },
+                {
+                    "date": 1666705308824,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n         return view('invoice.index',compact('orders'));\n     }\n \n     public function show($id){\n-        $invoice=Order::with() find($id);\n+        $invoice=Order::with('OrderDetail') find($id);\n         dd($invoice);\n         return view('invoice.show');\n     }\n\\ No newline at end of file\n-}\n+}\n"
+                },
+                {
+                    "date": 1666705336399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n         return view('invoice.index',compact('orders'));\n     }\n \n     public function show($id){\n-        $invoice=Order::with('OrderDetail') find($id);\n+        $invoice=Order::with('OrderDetail.Product')->find($id);\n         dd($invoice);\n         return view('invoice.show');\n     }\n\\ No newline at end of file\n-}\n+}\n"
+                },
+                {
+                    "date": 1666706479198,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,8 @@\n     }\n \n     public function show($id){\n         $invoice=Order::with('OrderDetail.Product')->find($id);\n-        dd($invoice);\n+        // dd($invoice);\n         return view('invoice.show');\n     }\n\\ No newline at end of file\n-}\n+}\n"
+                },
+                {
+                    "date": 1666706499593,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,7 +14,7 @@\n \n     public function show($id){\n         $invoice=Order::with('OrderDetail.Product')->find($id);\n         // dd($invoice);\n-        return view('invoice.show');\n+        return view('invoice.show',con);\n     }\n\\ No newline at end of file\n-}\n+}\n"
+                },
+                {
+                    "date": 1666706509170,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,7 +14,7 @@\n \n     public function show($id){\n         $invoice=Order::with('OrderDetail.Product')->find($id);\n         // dd($invoice);\n-        return view('invoice.show',con);\n+        return view('invoice.show',compact('invoice'));\n     }\n\\ No newline at end of file\n-}\n+}\n"
+                },
+                {
+                    "date": 1666706580769,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,8 @@\n     }\n \n     public function show($id){\n         $invoice=Order::with('OrderDetail.Product')->find($id);\n-        // dd($invoice);\n+        dd($invoice);\n         return view('invoice.show',compact('invoice'));\n     }\n\\ No newline at end of file\n-}\n+}\n"
+                },
+                {
+                    "date": 1666706661147,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,7 @@\n     }\n \n     public function show($id){\n         $invoice=Order::with('OrderDetail.Product')->find($id);\n-        dd($invoice);\n         return view('invoice.show',compact('invoice'));\n     }\n-}\n\\ No newline at end of file\n+}\n"
+                }
+            ],
+            "date": 1666687681298,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Http\\Controllers;\n\nuse Illuminate\\Http\\Request;\n\nclass InvoiceController extends Controller\n{\n    public function index\n}\n"
+        }
+    ]
+}

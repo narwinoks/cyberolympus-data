@@ -1,0 +1,82 @@
+{
+    "sourceFile": "app/Models/User.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 16,
+            "patches": [
+                {
+                    "date": 1666681651693,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666681661002,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n      *\n      * @var array<int, string>\n      */\n \n-    protected\n+    protected $table='users'\n     protected $fillable = [\n         'name',\n         'email',\n         'password',\n"
+                },
+                {
+                    "date": 1666681667720,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n      *\n      * @var array<int, string>\n      */\n \n-    protected $table='users'\n+    protected $table='users';\n     protected $fillable = [\n         'name',\n         'email',\n         'password',\n@@ -42,5 +42,7 @@\n      */\n     protected $casts = [\n         'email_verified_at' => 'datetime',\n     ];\n+\n+    public function \n }\n"
+                },
+                {
+                    "date": 1666681673575,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,6 +43,6 @@\n     protected $casts = [\n         'email_verified_at' => 'datetime',\n     ];\n \n-    public function \n+    public function Order()\n }\n"
+                },
+                {
+                    "date": 1666681680389,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,6 +43,8 @@\n     protected $casts = [\n         'email_verified_at' => 'datetime',\n     ];\n \n-    public function Order()\n+    public function Order(){\n+        return $this-\n+    }\n }\n"
+                },
+                {
+                    "date": 1666681690252,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,7 +44,7 @@\n         'email_verified_at' => 'datetime',\n     ];\n \n     public function Order(){\n-        return $this-\n+        return $this->hasMany(Order::class, 'email_verified_at');\n     }\n }\n"
+                },
+                {
+                    "date": 1666681696823,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,7 +44,7 @@\n         'email_verified_at' => 'datetime',\n     ];\n \n     public function Order(){\n-        return $this->hasMany(Order::class, 'email_verified_at');\n+        return $this->hasMany(Order::class,);\n     }\n }\n"
+                },
+                {
+                    "date": 1666681705874,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,7 +44,7 @@\n         'email_verified_at' => 'datetime',\n     ];\n \n     public function Order(){\n-        return $this->hasMany(Order::class,);\n+        return $this->hasMany(Order::class,'customer');\n     }\n }\n"
+                },
+                {
+                    "date": 1666682009582,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,7 +44,7 @@\n         'email_verified_at' => 'datetime',\n     ];\n \n     public function Order(){\n-        return $this->hasMany(Order::class,'customer');\n+        return $this->hasMany(Order::class,);\n     }\n }\n"
+                },
+                {
+                    "date": 1666682016600,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,7 +44,7 @@\n         'email_verified_at' => 'datetime',\n     ];\n \n     public function Order(){\n-        return $this->hasMany(Order::class,);\n+        return $this->hasMany(Order::class,'customer_id');\n     }\n }\n"
+                },
+                {
+                    "date": 1666684039014,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,7 +44,9 @@\n         'email_verified_at' => 'datetime',\n     ];\n \n     public function Order(){\n-        return $this->hasMany(Order::class,'customer_id');\n+        return $this->hasMany(Order::class,'customer_id','id');\n     }\n+\n+    public function Agent\n }\n"
+                },
+                {
+                    "date": 1666684044274,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,6 +47,8 @@\n     public function Order(){\n         return $this->hasMany(Order::class,'customer_id','id');\n     }\n \n-    public function Agent\n+    public function Agent(){\n+        return \n+    }\n }\n"
+                },
+                {
+                    "date": 1666684052896,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,7 +48,7 @@\n         return $this->hasMany(Order::class,'customer_id','id');\n     }\n \n     public function Agent(){\n-        return \n+        return $this->hasMany(Order::class,'\n     }\n }\n"
+                },
+                {
+                    "date": 1666684061280,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,7 +48,7 @@\n         return $this->hasMany(Order::class,'customer_id','id');\n     }\n \n     public function Agent(){\n-        return $this->hasMany(Order::class,'\n+        return $this->hasMany(Order::class,'age\n     }\n }\n"
+                },
+                {
+                    "date": 1666684071081,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,7 +48,7 @@\n         return $this->hasMany(Order::class,'customer_id','id');\n     }\n \n     public function Agent(){\n-        return $this->hasMany(Order::class,'age\n+        return $this->hasMany(Order::class,\n     }\n }\n"
+                },
+                {
+                    "date": 1666684076590,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,7 +48,7 @@\n         return $this->hasMany(Order::class,'customer_id','id');\n     }\n \n     public function Agent(){\n-        return $this->hasMany(Order::class,\n+        return $this->hasMany(Order::class,'agent_id','id');\n     }\n }\n"
+                },
+                {
+                    "date": 1666684263764,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,8 +47,8 @@\n     public function Order(){\n         return $this->hasMany(Order::class,'customer_id','id');\n     }\n \n-    public function Agent(){\n+    public function Order(){\n         return $this->hasMany(Order::class,'agent_id','id');\n     }\n }\n"
+                }
+            ],
+            "date": 1666681651693,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Models;\n\n// use Illuminate\\Contracts\\Auth\\MustVerifyEmail;\nuse Illuminate\\Database\\Eloquent\\Factories\\HasFactory;\nuse Illuminate\\Foundation\\Auth\\User as Authenticatable;\nuse Illuminate\\Notifications\\Notifiable;\nuse Laravel\\Sanctum\\HasApiTokens;\n\nclass User extends Authenticatable\n{\n    use HasApiTokens, HasFactory, Notifiable;\n\n    /**\n     * The attributes that are mass assignable.\n     *\n     * @var array<int, string>\n     */\n\n    protected\n    protected $fillable = [\n        'name',\n        'email',\n        'password',\n    ];\n\n    /**\n     * The attributes that should be hidden for serialization.\n     *\n     * @var array<int, string>\n     */\n    protected $hidden = [\n        'password',\n        'remember_token',\n    ];\n\n    /**\n     * The attributes that should be cast.\n     *\n     * @var array<string, string>\n     */\n    protected $casts = [\n        'email_verified_at' => 'datetime',\n    ];\n}\n"
+        }
+    ]
+}

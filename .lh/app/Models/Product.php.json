@@ -1,0 +1,30 @@
+{
+    "sourceFile": "app/Models/Product.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1666624704212,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666624711178,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,6 @@\n \n class Product extends Model\n {\n     use HasFactory;\n-    \n+    $protected $guarded\n }\n"
+                },
+                {
+                    "date": 1666624717383,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,6 @@\n \n class Product extends Model\n {\n     use HasFactory;\n-    $protected $guarded\n+    $protected $guarded=['id']\n }\n"
+                },
+                {
+                    "date": 1666624727737,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,6 +8,6 @@\n class Product extends Model\n {\n     use HasFactory;\n     protected $guarded=['id'];\n-    protected $table\n+    protected $table=\n }\n"
+                }
+            ],
+            "date": 1666624704212,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Models;\n\nuse Illuminate\\Database\\Eloquent\\Factories\\HasFactory;\nuse Illuminate\\Database\\Eloquent\\Model;\n\nclass Product extends Model\n{\n    use HasFactory;\n    \n}\n"
+        }
+    ]
+}

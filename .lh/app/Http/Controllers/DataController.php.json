@@ -1,0 +1,38 @@
+{
+    "sourceFile": "app/Http/Controllers/DataController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1666624979465,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666624985916,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,6 +5,8 @@\n use Illuminate\\Http\\Request;\n \n class DataController extends Controller\n {\n-    public function PopularProduct()\n+    public function PopularProduct(){\n+        return view()\n+    }\n }\n"
+                },
+                {
+                    "date": 1666624991466,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,8 @@\n \n class DataController extends Controller\n {\n     public function PopularProduct(){\n-        return view()\n+        // return view()\n+        $data=\n     }\n }\n"
+                },
+                {
+                    "date": 1666624998429,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,14 @@\n <?php\n \n namespace App\\Http\\Controllers;\n \n+use App\\Models\\OrderDetail;\n use Illuminate\\Http\\Request;\n \n class DataController extends Controller\n {\n     public function PopularProduct(){\n         // return view()\n-        $data=\n+        $data=OrderDetail::with('product')\n     }\n }\n"
+                },
+                {
+                    "date": 1666625006982,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,7 +9,7 @@\n {\n     public function PopularProduct(){\n         // return view()\n         $data=OrderDetail::with('product')->get();\n-        dd($data)\n+        dd($data);\n     }\n }\n"
+                },
+                {
+                    "date": 1666625770455,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,7 +15,6 @@\n         foreach($data as $key => $i){\n \n         }\n             echo $post[0]->OrderDetail;\n-        }\n     }\n }\n"
+                }
+            ],
+            "date": 1666624979465,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Http\\Controllers;\n\nuse Illuminate\\Http\\Request;\n\nclass DataController extends Controller\n{\n    public function PopularProduct()\n}\n"
+        }
+    ]
+}

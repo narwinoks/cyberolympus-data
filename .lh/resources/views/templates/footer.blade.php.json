@@ -1,0 +1,18 @@
+{
+    "sourceFile": "resources/views/templates/footer.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1666678951061,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1666678951061,
+            "name": "Commit-0",
+            "content": "<footer class=\"footer d-flex flex-column flex-md-row align-items-center justify-content-between\">\n    <p class=\"text-muted text-center text-md-left\">Copyright © 2020 <a href=\"https://www.nobleui.com\"\n            target=\"_blank\">NobleUI</a>. All rights reserved</p>\n    <p class=\"text-muted text-center text-md-left mb-0 d-none d-md-block\">Handcrafted With <i\n            class=\"mb-1 text-primary ml-1 icon-small\" data-feather=\"heart\"></i></p>\n</footer>\n</div>\n</div>\n<script src=\"{{ asset('assets/jquery-3.6.0.js') }}\"></script>\n<script src=\"{{ asset('assets/vendors/core/core.js') }}\"></script>\n<script src=\"{{ asset('assets/vendors/feather-icons/feather.min.js') }}\"></script>\n<script src=\"{{ asset('assets/js/template.js') }}\"></script>\n@stack('scripts')\n</body>\n\n</html>\n"
+        }
+    ]
+}

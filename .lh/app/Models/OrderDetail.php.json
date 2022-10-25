@@ -1,0 +1,74 @@
+{
+    "sourceFile": "app/Models/OrderDetail.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 14,
+            "patches": [
+                {
+                    "date": 1666624824018,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666624837777,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,6 +8,6 @@\n class OrderDetail extends Model\n {\n     use HasFactory;\n     protected $guarded=['id'];\n-    protected $table='product';\n+    protected $table='order_detail';\n }\n"
+                },
+                {
+                    "date": 1666624868917,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,5 +9,8 @@\n {\n     use HasFactory;\n     protected $guarded=['id'];\n     protected $table='order_detail';\n+    public function OrderDetail(){\n+        return $this->hasMany(OrderDetail::class, 'product_id','id');\n+    }\n }\n"
+                },
+                {
+                    "date": 1666624953104,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,7 +10,7 @@\n     use HasFactory;\n     protected $guarded=['id'];\n     protected $table='order_detail';\n     public function OrderDetail(){\n-        return $this->hasMany(OrderDetail::class, 'product_id','id');\n+        return $this->hasMany(Product::class, 'id','id');\n     }\n }\n"
+                },
+                {
+                    "date": 1666624959210,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,7 +10,7 @@\n     use HasFactory;\n     protected $guarded=['id'];\n     protected $table='order_detail';\n     public function OrderDetail(){\n-        return $this->hasMany(Product::class, 'id','id');\n+        return $this->hasMany(Product::class, 'id','product');\n     }\n }\n"
+                },
+                {
+                    "date": 1666625070940,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,8 @@\n {\n     use HasFactory;\n     protected $guarded=['id'];\n     protected $table='order_detail';\n-    public function OrderDetail(){\n-        return $this->hasMany(Product::class, 'id','product');\n+    public function product(){\n+        return $this->hasMany(Product::class, 'id','product_id');\n     }\n }\n"
+                },
+                {
+                    "date": 1666667635784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,8 @@\n {\n     use HasFactory;\n     protected $guarded=['id'];\n     protected $table='order_detail';\n-    public function product(){\n-        return $this->hasMany(Product::class, 'id','product_id');\n+    public function Product(){\n+        return $this->belongsTo(Product::class, 'id','product_id');\n     }\n }\n"
+                },
+                {
+                    "date": 1666667674153,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,7 +10,7 @@\n     use HasFactory;\n     protected $guarded=['id'];\n     protected $table='order_detail';\n     public function Product(){\n-        return $this->belongsTo(Product::class, 'id','product_id');\n+        return $this->belongsTo(Product::class, 'product','product_id');\n     }\n }\n"
+                },
+                {
+                    "date": 1666667680124,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,7 +10,7 @@\n     use HasFactory;\n     protected $guarded=['id'];\n     protected $table='order_detail';\n     public function Product(){\n-        return $this->belongsTo(Product::class, 'product','product_id');\n+        return $this->belongsTo(Product::class, 'product_id','id');\n     }\n }\n"
+                },
+                {
+                    "date": 1666667747138,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,7 +10,7 @@\n     use HasFactory;\n     protected $guarded=['id'];\n     protected $table='order_detail';\n     public function Product(){\n-        return $this->belongsTo(Product::class, 'product_id','id');\n+        return $this->belongsTo(Product::class, 'hhh','id');\n     }\n }\n"
+                },
+                {
+                    "date": 1666667765903,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,7 +10,7 @@\n     use HasFactory;\n     protected $guarded=['id'];\n     protected $table='order_detail';\n     public function Product(){\n-        return $this->belongsTo(Product::class, 'hhh','id');\n+        return $this->belongsTo(Product::class, 'product_id','id');\n     }\n }\n"
+                },
+                {
+                    "date": 1666668891573,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,7 +10,7 @@\n     use HasFactory;\n     protected $guarded=['id'];\n     protected $table='order_detail';\n     public function Product(){\n-        return $this->belongsTo(Product::class, 'product_id','id');\n+        return $this->belongsTo(Product::class, 'product');\n     }\n }\n"
+                },
+                {
+                    "date": 1666705269781,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,7 +10,9 @@\n     use HasFactory;\n     protected $guarded=['id'];\n     protected $table='order_detail';\n     public function Product(){\n-        return $this->belongsTo(Product::class, 'product');\n+        return $this->belongsTo(Product::class, 'product_id','id');\n     }\n+\n+    public function Order()\n }\n"
+                },
+                {
+                    "date": 1666705275635,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,6 +13,8 @@\n     public function Product(){\n         return $this->belongsTo(Product::class, 'product_id','id');\n     }\n \n-    public function Order()\n+    public function Order(){\n+        return $this->belongsTo(Order::class, 'order_id\n+    }\n }\n"
+                },
+                {
+                    "date": 1666705283845,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,7 +14,7 @@\n         return $this->belongsTo(Product::class, 'product_id','id');\n     }\n \n     public function Order(){\n-        return $this->belongsTo(Order::class, 'order_id\n+        return $this->belongsTo(Order::class, 'order_id','id');\n     }\n }\n"
+                }
+            ],
+            "date": 1666624824018,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Models;\n\nuse Illuminate\\Database\\Eloquent\\Factories\\HasFactory;\nuse Illuminate\\Database\\Eloquent\\Model;\n\nclass OrderDetail extends Model\n{\n    use HasFactory;\n    protected $guarded=['id'];\n    protected $table='product';\n}\n"
+        }
+    ]
+}

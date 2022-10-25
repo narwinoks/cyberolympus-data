@@ -1,0 +1,22 @@
+{
+    "sourceFile": "app/Http/Controllers/CustomerController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1666680425889,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666680484296,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,6 +5,8 @@\n use Illuminate\\Http\\Request;\n \n class CustomerController extends Controller\n {\n-    public function index()\n+    public function index(){\n+        return view('customer.index')\n+    }\n }\n"
+                }
+            ],
+            "date": 1666680425889,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Http\\Controllers;\n\nuse Illuminate\\Http\\Request;\n\nclass CustomerController extends Controller\n{\n    public function index()\n}\n"
+        }
+    ]
+}

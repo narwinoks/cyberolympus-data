@@ -1,0 +1,22 @@
+{
+    "sourceFile": "app/Helpers/helpers.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1666705635307,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666705646573,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <?php \n \n-iif (!function_exists('konversi_uang')) {\n+if (!function_exists('konversi_uang')) {\n \tfunction konversi_uang($a)\n \t{\n \t\tif (isset($a)) {\n \t\t\tif ($a == '') {\n"
+                }
+            ],
+            "date": 1666705635307,
+            "name": "Commit-0",
+            "content": "<?php \n\niif (!function_exists('konversi_uang')) {\n\tfunction konversi_uang($a)\n\t{\n\t\tif (isset($a)) {\n\t\t\tif ($a == '') {\n\t\t\t\t$a = 0;\n\t\t\t}\n\t\t\t$p \t\t\t= strlen($a);\n\t\t\t$hasil \t\t= number_format($a, 2);\n\t\t\treturn \"Rp. \" . $hasil;\n\t\t}\n\t}\n}\n\n\n?>"
+        }
+    ]
+}

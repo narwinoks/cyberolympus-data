@@ -1,0 +1,82 @@
+{
+    "sourceFile": "resources/views/product/index.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 16,
+            "patches": [
+                {
+                    "date": 1666624068360,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666671081416,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,8 @@\n         <div class=\"card\">\n             <div class=\"card-body\">\n                 <h6 class=\"card-title\">List Master City</h6>\n                 <p class=\"card-description\">Enter Your Master Data From City</p>\n-                <a href=\"{{ route('city.create') }}\" class=\"btn btn-success my-3 btn-sm\">Add Data</a>\n                 <div class=\"table\">\n                     <table id=\"dataTableExample\" class=\"table\">\n                         <thead>\n                             <tr>\n"
+                },
+                {
+                    "date": 1666671087610,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n                     <table id=\"dataTableExample\" class=\"table\">\n                         <thead>\n                             <tr>\n                                 <th>No</th>\n-                                <th>Nama Kota</th>\n+                                <th>Product</th>\n                                 <th>Provinsi</th>\n                                 <th>Pulau</th>\n                                 <th>Latitude</th>\n                                 <th>Logtitude</th>\n"
+                },
+                {
+                    "date": 1666671142880,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n                         <thead>\n                             <tr>\n                                 <th>No</th>\n                                 <th>Product</th>\n-                                <th>Provinsi</th>\n+                                <th>price_agent</th>\n                                 <th>Pulau</th>\n                                 <th>Latitude</th>\n                                 <th>Logtitude</th>\n                                 <th>Luar Negri</th>\n"
+                },
+                {
+                    "date": 1666671154567,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,14 +10,9 @@\n                         <thead>\n                             <tr>\n                                 <th>No</th>\n                                 <th>Product</th>\n-                                <th>price_agent</th>\n-                                <th>Pulau</th>\n-                                <th>Latitude</th>\n-                                <th>Logtitude</th>\n-                                <th>Luar Negri</th>\n-                                <th>Aksi</th>\n+                                <th>Price</th>\n                             </tr>\n                         </thead>\n                         <tbody>\n                         </tbody>\n"
+                },
+                {
+                    "date": 1666671163742,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,9 @@\n                                 <th>Product</th>\n                                 <th>Price</th>\n                             </tr>\n                         </thead>\n+\n                         <tbody>\n                         </tbody>\n                     </table>\n                 </div>\n@@ -28,4 +29,6 @@\n @endpush\n @push('styles')\n     <link rel=\"stylesheet\" href=\"{{ asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css') }}\">\n @endpush\n+@push('styles')\n+@endpush\n"
+                },
+                {
+                    "date": 1666671169080,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,5 +30,6 @@\n @push('styles')\n     <link rel=\"stylesheet\" href=\"{{ asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css') }}\">\n @endpush\n @push('styles')\n+    scri\n @endpush\n"
+                },
+                {
+                    "date": 1666671361394,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,6 +30,40 @@\n @push('styles')\n     <link rel=\"stylesheet\" href=\"{{ asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css') }}\">\n @endpush\n @push('styles')\n-    scri\n+    <script>\n+        // DataTable\n+        $('#dataTableExample').DataTable({\n+            processing: true,\n+            //  serverSide: true,\n+            ajax: \"{{ route('data.city') }}\",\n+            columns: [{\n+                    data: 'DT_RowIndex',\n+                    orderable: false,\n+                    searchable: false\n+                },\n+                {\n+                    data: 'city'\n+                },\n+                {\n+                    data: 'provinces'\n+                },\n+                {\n+                    data: 'island'\n+                },\n+                {\n+                    data: 'latitude'\n+                },\n+                {\n+                    data: 'longitute'\n+                },\n+                {\n+                    data: 'overseas'\n+                },\n+                {\n+                    data: 'action'\n+                },\n+            ]\n+        });\n+    </script>\n @endpush\n"
+                },
+                {
+                    "date": 1666671373174,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n                     orderable: false,\n                     searchable: false\n                 },\n                 {\n-                    data: 'city'\n+                    data: 'product'\n                 },\n                 {\n                     data: 'provinces'\n                 },\n"
+                },
+                {
+                    "date": 1666671378250,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n                 {\n                     data: 'product'\n                 },\n                 {\n-                    data: 'provinces'\n+                    data: 'price'\n                 },\n                 {\n                     data: 'island'\n                 },\n"
+                },
+                {
+                    "date": 1666671384388,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,24 +46,9 @@\n                     data: 'product'\n                 },\n                 {\n                     data: 'price'\n-                },\n-                {\n-                    data: 'island'\n-                },\n-                {\n-                    data: 'latitude'\n-                },\n-                {\n-                    data: 'longitute'\n-                },\n-                {\n-                    data: 'overseas'\n-                },\n-                {\n-                    data: 'action'\n-                },\n+                }\n             ]\n         });\n     </script>\n @endpush\n"
+                },
+                {
+                    "date": 1666671578203,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,9 @@\n                     data: 'product'\n                 },\n                 {\n                     data: 'price'\n-                }\n+                },\n             ]\n         });\n     </script>\n @endpush\n"
+                },
+                {
+                    "date": 1666671583745,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,8 +47,11 @@\n                 },\n                 {\n                     data: 'price'\n                 },\n+                {\n+                    data: 'price'\n+                },\n             ]\n         });\n     </script>\n @endpush\n"
+                },
+                {
+                    "date": 1666671607751,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,9 @@\n                 {\n                     data: 'price'\n                 },\n                 {\n-                    data: 'price'\n+                    data: 'sale'\n                 },\n             ]\n         });\n     </script>\n"
+                },
+                {
+                    "date": 1666671614028,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,9 @@\n                             <tr>\n                                 <th>No</th>\n                                 <th>Product</th>\n                                 <th>Price</th>\n+                                <th>Sale</th>\n                             </tr>\n                         </thead>\n \n                         <tbody>\n"
+                },
+                {
+                    "date": 1666672475459,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n         // DataTable\n         $('#dataTableExample').DataTable({\n             processing: true,\n             //  serverSide: true,\n-            ajax: \"{{ route('data.city') }}\",\n+            ajax: \"{{ route('popular.city') }}\",\n             columns: [{\n                     data: 'DT_RowIndex',\n                     orderable: false,\n                     searchable: false\n"
+                },
+                {
+                    "date": 1666672481301,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n         // DataTable\n         $('#dataTableExample').DataTable({\n             processing: true,\n             //  serverSide: true,\n-            ajax: \"{{ route('popular.') }}\",\n+            ajax: \"{{ route('popular.p') }}\",\n             columns: [{\n                     data: 'DT_RowIndex',\n                     orderable: false,\n                     searchable: false\n"
+                }
+            ],
+            "date": 1666624068359,
+            "name": "Commit-0",
+            "content": "@extends('templates.main')\n@section('content')\n    <div class=\"col-md-12 grid-margin stretch-card\">\n        <div class=\"card\">\n            <div class=\"card-body\">\n                <h6 class=\"card-title\">List Master City</h6>\n                <p class=\"card-description\">Enter Your Master Data From City</p>\n                <a href=\"{{ route('city.create') }}\" class=\"btn btn-success my-3 btn-sm\">Add Data</a>\n                <div class=\"table\">\n                    <table id=\"dataTableExample\" class=\"table\">\n                        <thead>\n                            <tr>\n                                <th>No</th>\n                                <th>Nama Kota</th>\n                                <th>Provinsi</th>\n                                <th>Pulau</th>\n                                <th>Latitude</th>\n                                <th>Logtitude</th>\n                                <th>Luar Negri</th>\n                                <th>Aksi</th>\n                            </tr>\n                        </thead>\n                        <tbody>\n                        </tbody>\n                    </table>\n                </div>\n            </div>\n        </div>\n    </div>\n@endsection\n@push('scripts')\n    <script src=\"{{ asset('assets/vendors/datatables.net/jquery.dataTables.js') }}\"></script>\n    <script src=\"{{ asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js') }}\"></script>\n@endpush\n@push('styles')\n    <link rel=\"stylesheet\" href=\"{{ asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css') }}\">\n@endpush\n"
+        }
+    ]
+}

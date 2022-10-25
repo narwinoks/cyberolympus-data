@@ -1,0 +1,18 @@
+{
+    "sourceFile": "resources/views/templates/product/index.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1666623963124,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1666623963124,
+            "name": "Commit-0",
+            "content": "@extends('templates.main')\n@section('content')\n    <div class=\"col-md-12 grid-margin stretch-card\">\n        <div class=\"card\">\n            <div class=\"card-body\">\n                <h6 class=\"card-title\">List Master City</h6>\n                <p class=\"card-description\">Enter Your Master Data From City</p>\n                <a href=\"{{ route('city.create') }}\" class=\"btn btn-success my-3 btn-sm\">Add Data</a>\n                <div class=\"table\">\n                    <table id=\"dataTableExample\" class=\"table\">\n                        <thead>\n                            <tr>\n                                <th>No</th>\n                                <th>Nama Kota</th>\n                                <th>Provinsi</th>\n                                <th>Pulau</th>\n                                <th>Latitude</th>\n                                <th>Logtitude</th>\n                                <th>Luar Negri</th>\n                                <th>Aksi</th>\n                            </tr>\n                        </thead>\n                        <tbody>\n                            @foreach ($cities as $city)\n                                <tr>\n                                    <td>{{ $loop->iteration }}</td>\n                                    <td>{{ $city->city }}</td>\n                                    <td>{{ $city->province }}</td>\n                                    <td>{{ $city->island }}</td>\n                                    <td>{{ $city->latitude }}</td>\n                                    <td>{{ $city->longitude }}</td>\n                                    <td>{{ $city->overseas == '1' ? 'YA' : 'Tidak' }}</td>\n                                    <td>\n                                        <form action=\"{{ route('city.destroy', $city->id) }}\" class=\"d-inline\"\n                                            method=\"POST\">\n                                            @method('DELETE')\n                                            @csrf\n                                            <button class=\"btn btn-danger btn-sm\"\n                                                onclick=\"return confirm('Are you sure you want to delete this item?');\">Delete</button>\n                                            <a href=\"{{ route('city.edit', $city->id) }}\"\n                                                class=\"btn btn-primary bt-sm\">Update</a>\n                                        </form>\n                                    </td>\n                                </tr>\n                            @endforeach\n                        </tbody>\n                    </table>\n                </div>\n            </div>\n        </div>\n    </div>\n@endsection\n@push('scripts')\n    <script src=\"{{ asset('assets/vendors/datatables.net/jquery.dataTables.js') }}\"></script>\n    <script src=\"{{ asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js') }}\"></script>\n@endpush\n@push('styles')\n    <link rel=\"stylesheet\" href=\"{{ asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css') }}\">\n@endpush\n"
+        }
+    ]
+}

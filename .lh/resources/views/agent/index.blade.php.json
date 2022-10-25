@@ -1,0 +1,30 @@
+{
+    "sourceFile": "resources/views/agent/index.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1666685617634,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666685649540,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n                     <table id=\"dataTableExample\" class=\"table\">\n                         <thead>\n                             <tr>\n                                 <th>No</th>\n-                                <th>Customer</th>\n+                                <th>Agent</th>\n                                 <th>Price</th>\n                             </tr>\n                         </thead>\n \n"
+                },
+                {
+                    "date": 1666685656320,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n                         <thead>\n                             <tr>\n                                 <th>No</th>\n                                 <th>Agent</th>\n-                                <th>Price</th>\n+                                <th>Total Customers</th>\n                             </tr>\n                         </thead>\n \n                         <tbody>\n"
+                },
+                {
+                    "date": 1666686985323,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,8 +34,10 @@\n     <script>\n         // DataTable\n         $('#dataTableExample').DataTable({\n             processing: true,\n+            searching: false,\n+\n             //  serverSide: true,\n             ajax: \"{{ route('agent') }}\",\n             columns: [{\n                     data: \"id\"\n"
+                }
+            ],
+            "date": 1666685617634,
+            "name": "Commit-0",
+            "content": "@extends('templates.main')\n@section('content')\n    <div class=\"col-md-12 grid-margin stretch-card\">\n        <div class=\"card\">\n            <div class=\"card-body\">\n                <h6 class=\"card-title\">List Master City</h6>\n                <p class=\"card-description\">Enter Your Master Data From City</p>\n                <div class=\"table\">\n                    <table id=\"dataTableExample\" class=\"table\">\n                        <thead>\n                            <tr>\n                                <th>No</th>\n                                <th>Customer</th>\n                                <th>Price</th>\n                            </tr>\n                        </thead>\n\n                        <tbody>\n                        </tbody>\n                    </table>\n                </div>\n            </div>\n        </div>\n    </div>\n@endsection\n@push('scripts')\n    <script src=\"{{ asset('assets/vendors/datatables.net/jquery.dataTables.js') }}\"></script>\n    <script src=\"{{ asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js') }}\"></script>\n@endpush\n@push('styles')\n    <link rel=\"stylesheet\" href=\"{{ asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css') }}\">\n@endpush\n@push('scripts')\n    <script>\n        // DataTable\n        $('#dataTableExample').DataTable({\n            processing: true,\n            //  serverSide: true,\n            ajax: \"{{ route('agent') }}\",\n            columns: [{\n                    data: \"id\"\n                },\n                {\n                    data: 'name'\n                },\n                {\n                    data: 'total'\n                }\n            ]\n        });\n    </script>\n@endpush\n"
+        }
+    ]
+}

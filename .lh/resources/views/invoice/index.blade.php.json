@@ -1,0 +1,74 @@
+{
+    "sourceFile": "resources/views/invoice/index.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 14,
+            "patches": [
+                {
+                    "date": 1666687262250,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666687269751,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,4 @@\n-sec\n\\ No newline at end of file\n+\n+@section('content')\n+    \n+@endsection\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1666687275437,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,3 @@\n-\n+@extends('templates.main')\n @section('content')\n-    \n\\ No newline at end of file\n-@endsection\n+@endsection\n"
+                },
+                {
+                    "date": 1666687311921,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,57 @@\n @extends('templates.main')\n @section('content')\n+    @extends('templates.main')\n+@section('content')\n+    <div class=\"col-md-12 grid-margin stretch-card\">\n+        <div class=\"card\">\n+            <div class=\"card-body\">\n+                <h6 class=\"card-title\">List Master City</h6>\n+                <p class=\"card-description\">Enter Your Master Data From City</p>\n+                <div class=\"table\">\n+                    <table id=\"dataTableExample\" class=\"table\">\n+                        <thead>\n+                            <tr>\n+                                <th>No</th>\n+                                <th>Customer</th>\n+                                <th>Price</th>\n+                            </tr>\n+                        </thead>\n+\n+                        <tbody>\n+                        </tbody>\n+                    </table>\n+                </div>\n+            </div>\n+        </div>\n+    </div>\n @endsection\n+@push('scripts')\n+    <script src=\"{{ asset('assets/vendors/datatables.net/jquery.dataTables.js') }}\"></script>\n+    <script src=\"{{ asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js') }}\"></script>\n+@endpush\n+@push('styles')\n+    <link rel=\"stylesheet\" href=\"{{ asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css') }}\">\n+@endpush\n+@push('scripts')\n+    <script>\n+        // DataTable\n+        $('#dataTableExample').DataTable({\n+            processing: true,\n+            searching: false,\n+            //  serverSide: true,\n+            ajax: \"{{ route('customer') }}\",\n+            columns: [{\n+                    data: \"id\"\n+                },\n+                {\n+                    data: 'name'\n+                },\n+                {\n+                    data: 'total'\n+                }\n+            ]\n+        });\n+    </script>\n+@endpush\n+\n+@endsection\n"
+                },
+                {
+                    "date": 1666687317834,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,26 +32,7 @@\n @push('styles')\n     <link rel=\"stylesheet\" href=\"{{ asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css') }}\">\n @endpush\n @push('scripts')\n-    <script>\n-        // DataTable\n-        $('#dataTableExample').DataTable({\n-            processing: true,\n-            searching: false,\n-            //  serverSide: true,\n-            ajax: \"{{ route('customer') }}\",\n-            columns: [{\n-                    data: \"id\"\n-                },\n-                {\n-                    data: 'name'\n-                },\n-                {\n-                    data: 'total'\n-                }\n-            ]\n-        });\n-    </script>\n @endpush\n \n @endsection\n"
+                },
+                {
+                    "date": 1666687324523,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,8 +31,8 @@\n @endpush\n @push('styles')\n     <link rel=\"stylesheet\" href=\"{{ asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css') }}\">\n @endpush\n-@push('scripts')\n+\n @endpush\n \n @endsection\n"
+                },
+                {
+                    "date": 1666687331305,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,8 +31,4 @@\n @endpush\n @push('styles')\n     <link rel=\"stylesheet\" href=\"{{ asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css') }}\">\n @endpush\n-\n-@endpush\n-\n-@endsection\n"
+                },
+                {
+                    "date": 1666687348073,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,9 @@\n     </div>\n @endsection\n @push('scripts')\n     <script src=\"{{ asset('assets/vendors/datatables.net/jquery.dataTables.js') }}\"></script>\n+    <script src=\"{{ asset('assets/vendors/datatables.net/jquery.dataTables.js') }}\"></script>\n     <script src=\"{{ asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js') }}\"></script>\n @endpush\n @push('styles')\n     <link rel=\"stylesheet\" href=\"{{ asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css') }}\">\n"
+                },
+                {
+                    "date": 1666687355752,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n     </div>\n @endsection\n @push('scripts')\n     <script src=\"{{ asset('assets/vendors/datatables.net/jquery.dataTables.js') }}\"></script>\n-    <script src=\"{{ asset('assets/vendors/datatables.net/jquery.dataTables.js') }}\"></script>\n+    <script src=\"{{ asset('assets/vendors/') }}\"></script>\n     <script src=\"{{ asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js') }}\"></script>\n @endpush\n @push('styles')\n     <link rel=\"stylesheet\" href=\"{{ asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css') }}\">\n"
+                },
+                {
+                    "date": 1666687362406,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n     </div>\n @endsection\n @push('scripts')\n     <script src=\"{{ asset('assets/vendors/datatables.net/jquery.dataTables.js') }}\"></script>\n-    <script src=\"{{ asset('assets/vendors/') }}\"></script>\n+    <script src=\"{{ asset('assets/js') }}\"></script>\n     <script src=\"{{ asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js') }}\"></script>\n @endpush\n @push('styles')\n     <link rel=\"stylesheet\" href=\"{{ asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css') }}\">\n"
+                },
+                {
+                    "date": 1666687367486,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n     </div>\n @endsection\n @push('scripts')\n     <script src=\"{{ asset('assets/vendors/datatables.net/jquery.dataTables.js') }}\"></script>\n-    <script src=\"{{ asset('assets/js') }}\"></script>\n+    <script src=\"{{ asset('assets/js/data-table.js') }}\"></script>\n     <script src=\"{{ asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js') }}\"></script>\n @endpush\n @push('styles')\n     <link rel=\"stylesheet\" href=\"{{ asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css') }}\">\n"
+                },
+                {
+                    "date": 1666687373851,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,11 @@\n                                 <th>Customer</th>\n                                 <th>Price</th>\n                             </tr>\n                         </thead>\n-\n+                            <tr>\n+                                \n+                            </tr>\n                         <tbody>\n                         </tbody>\n                     </table>\n                 </div>\n"
+                },
+                {
+                    "date": 1666687487546,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,13 +12,14 @@\n                         <thead>\n                             <tr>\n                                 <th>No</th>\n                                 <th>Customer</th>\n-                                <th>Price</th>\n+                                <th></th>\n                             </tr>\n                         </thead>\n+                        fore\n                             <tr>\n-                                \n+\n                             </tr>\n                         <tbody>\n                         </tbody>\n                     </table>\n"
+                },
+                {
+                    "date": 1666687504397,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n                     <table id=\"dataTableExample\" class=\"table\">\n                         <thead>\n                             <tr>\n                                 <th>No</th>\n-                                <th></th>\n+                                <th>I</th>\n                                 <th>Customer</th>\n                                 <th></th>\n                             </tr>\n                         </thead>\n"
+                },
+                {
+                    "date": 1666687591129,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n                             </tr>\n                         </thead>\n                         @foreach ($orders as $order)\n                             <tr>\n-                                <td></td>\n+                                <td>$</td>\n                                 <td> <a href=\"\" class=\"btn btn-success btn-sm\">Show</a></td>\n                             </tr>\n                         @endforeach\n                         <tbody>\n"
+                }
+            ],
+            "date": 1666687262250,
+            "name": "Commit-0",
+            "content": "sec"
+        }
+    ]
+}
